@@ -1,0 +1,8 @@
+[INFO] Starting gunicorn
+[INFO] Listening at: http://0.0.0.0:8080
+[INFO] Using worker: sync
+[INFO] Booting worker with pid
+[INFO] [log_handlers] Logging handler established
+[INFO] [__init__] ****************************************************
+[INFO] [__init__] ******************* S E R V I C E   R U N N I N G *******************
+[INFO] [__init__] ****************************************************
