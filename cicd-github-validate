@@ -1,8 +1,8 @@
-✓ main CI workflow · 39694456138
-Triggered via push about 3 minutes ago
+✓ main CI workflow · 39696157517
+Triggered via push about 8 minutes ago
 
 JOBS
-✓ build in 33s (ID 119548324173)
+✓ build in 22s (ID 119553918471)
   ✓ Set up job
   ✓ Initialize containers
   ✓ Checkout
@@ -13,5 +13,4 @@ JOBS
   ✓ Stop containers
   ✓ Complete job
 
-For more information about the job, try: gh run view --job=119548324173
-View this run on GitHub: https://github.com/OminduD/ci-cd-final-project/actions/runs/39694456138
+View this run on GitHub: https://github.com/OminduD/ci-cd-final-project/actions/runs/39696157517
