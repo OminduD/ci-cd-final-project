@@ -21,14 +21,14 @@ spec:
       description: The git branch or commit
       default: "main"
   workspaces:
-    - name: pipeline-workspace
+    - name: output
   tasks:
     - name: cleanup
       taskRef:
         name: cleanup
       workspaces:
         - name: source
-          workspace: pipeline-workspace
+          workspace: output
     - name: git-clone
       taskRef:
         name: git-clone
@@ -41,7 +41,7 @@ spec:
           value: $(params.git-revision)
       workspaces:
         - name: output
-          workspace: pipeline-workspace
+          workspace: output
     - name: flake8
       taskRef:
         name: flake8
@@ -59,7 +59,7 @@ spec:
             - "--statistics"
       workspaces:
         - name: source
-          workspace: pipeline-workspace
+          workspace: output
     - name: nose
       taskRef:
         name: nose
@@ -70,7 +70,7 @@ spec:
           value: "-v --with-spec --spec-color --with-coverage --cover-package=app"
       workspaces:
         - name: source
-          workspace: pipeline-workspace
+          workspace: output
     - name: buildah
       taskRef:
         name: buildah
@@ -81,7 +81,7 @@ spec:
           value: $(params.build-image)
       workspaces:
         - name: source
-          workspace: pipeline-workspace
+          workspace: output
   finally:
     - name: deploy
       taskRef:
