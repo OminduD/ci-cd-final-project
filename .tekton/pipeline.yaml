@@ -32,6 +32,7 @@ spec:
     - name: git-clone
       taskRef:
         name: git-clone
+        kind: ClusterTask
       runAfter:
         - cleanup
       params:
@@ -49,7 +50,7 @@ spec:
         - git-clone
       params:
         - name: image
-          value: "python:3.9-slim"
+          value: "docker.io/alpine/flake8:latest"
         - name: args
           value:
             - "service"
@@ -74,6 +75,7 @@ spec:
     - name: buildah
       taskRef:
         name: buildah
+        kind: ClusterTask
       runAfter:
         - nose
       params:
@@ -86,6 +88,7 @@ spec:
     - name: deploy
       taskRef:
         name: openshift-client
+        kind: ClusterTask
       params:
         - name: SCRIPT
           value: |
